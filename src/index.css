@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+/* Custom Theme */
+@theme {
+  --color-cream: #FDFBF7;
+  --color-charcoal: #0D0D0D;
+  --color-disha-red: #FF4D4D;
+  --color-disha-yellow: #FFD93D;
+  --color-grey-text: #888888;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: auto;
+  /* Let Lenis handle smooth scroll */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for clean look */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* GPU acceleration for smoother animations */
+.will-change-transform {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Custom logo styling for 'Disha' */
+.disha-logo {
+  font-family: 'Abril Fatface', serif;
+  display: inline-block;
+  letter-spacing: -0.02em;
+  position: relative;
+  line-height: 1;
+}
+
+.disha-logo .i-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Clip the dot of the 'i' */
+.disha-logo .i-base {
+  display: inline-block;
+  clip-path: inset(22% 0 0 0);
+  /* Cut off the top part (the dot) */
+}
+
+.disha-logo .heart-dot {
+  position: absolute;
+  top: -0.15em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.5em;
+  height: 0.5em;
+}
+
+/* Give the title a slightly irregular look */
+.animated-title {
+  filter: url(#rough-edges);
+}
+
+/* Smooth Text Reveal Class */
+.reveal-text span {
+  opacity: 0.2;
+  transition: none;
+  /* Remove CSS transitions, let GSAP handle it */
+}
+
+.reveal-text span.active {
+  opacity: 1;
+}
+
+/* Stroke text for marquee */
+.stroke-text {
+  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Optimize transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: ease-out;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: ease-out;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+}
+
+.transition-all {
+  transition-timing-function: ease-out;
+}

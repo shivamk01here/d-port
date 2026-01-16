@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disha Kanojia | Creative Strategist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF7',
+                        charcoal: '#0D0D0D',
+                        dishaRed: '#FF4D4D',
+                        dishaYellow: '#FFD93D',
+                        greyText: '#888888'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    cursor: {
+                        'fancy': 'url("data:image/svg+xml;utf8,<svg width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><circle cx=\'12\' cy=\'12\' r=\'6\' fill=\'%23FF4D4D\'/></svg>") 12 12, auto',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* Custom underlining for the name */
+        .underline-highlight {
+            position: relative;
+            display: inline-block;
+        }
+
+        .underline-highlight::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 100%;
+            height: 12px;
+            background-color: #FFD93D;
+            z-index: -1;
+            transform: rotate(-1deg) skewX(-10deg);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .dark .underline-highlight::after {
+            background-color: #bfa01d;
+            /* Darker yellow for dark mode */
+        }
+
+        /* Smooth Text Reveal Class */
+        .reveal-text span {
+            opacity: 0.2;
+            transition: opacity 0.3s;
+        }
+
+        .reveal-text span.active {
+            opacity: 1;
+        }
+
+        /* Loader */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FF4D4D;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transform-origin: top;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-cream text-charcoal dark:bg-charcoal dark:text-cream transition-colors duration-500 overflow-x-hidden antialiased">
+
+    <div id="loader">
+        <h1 class="text-6xl font-display font-bold">DISHA KANOJIA</h1>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference text-white">
+        <div class="text-lg font-display font-bold tracking-widest uppercase">Disha.</div>
+        <div class="flex items-center gap-6">
+            <button id="theme-toggle" class="hover:text-dishaRed transition-colors">
+                <i data-lucide="moon" class="w-5 h-5"></i>
+            </button>
+            <a href="mailto:dishakanojia87@gmail.com"
+                class="hidden md:block border border-white/30 px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm font-medium">
+                Let's Talk
+            </a>
+        </div>
+    </nav>
+
+    <section class="h-screen w-full flex flex-col justify-center items-center px-6 relative" id="hero">
+        <div class="absolute top-1/4 left-10 opacity-10 rotate-12 animate-pulse hidden md:block">
+            <i data-lucide="heart" class="w-24 h-24 text-dishaRed"></i>
+        </div>
+
+        <div class="text-center z-10 hero-text-container">
+            <p class="text-xl md:text-2xl font-light mb-4 text-greyText">Marketing & Creative Strategy</p>
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-tight">
+                Hey, it's me <br>
+                <span class="text-dishaRed underline-highlight">Disha</span>.
+            </h1>
+            <div
+                class="mt-12 flex flex-col md:flex-row gap-6 items-center justify-center opacity-0 hero-cta translate-y-10">
+                <p class="max-w-md text-center text-lg md:text-xl font-light leading-relaxed">
+                    Bridging the gap between <span class="font-semibold">B2B Technology</span> and <span
+                        class="font-semibold">Human-Centric Design</span>.
+                </p>
+            </div>
+            <div class="mt-8 opacity-0 hero-cta translate-y-10">
+                <i data-lucide="arrow-down" class="w-8 h-8 animate-bounce mx-auto mt-8 opacity-50"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 border-y border-black/10 dark:border-white/10 overflow-hidden bg-white dark:bg-white/5">
+        <div
+            class="flex whitespace-nowrap gap-16 md:gap-32 marquee-content text-4xl md:text-6xl font-display font-bold text-transparent stroke-text opacity-50">
+            <span class="hover:text-black dark:hover:text-white transition-colors cursor-default">TECHCHEFZ</span>
+            <span class="hover:text-black dark:hover:text-white transition-colors cursor-default">OFFIGA</span>
+            <span class="hover:text-black dark:hover:text-white transition-colors cursor-default">IXAMBEE</span>
+            <span class="hover:text-black dark:hover:text-white transition-colors cursor-default">DU</span>
+            <span class="hover:text-black dark:hover:text-white transition-colors cursor-default">TECHCHEFZ</span>
+            <span class="hover:text-black dark:hover:text-white transition-colors cursor-default">OFFIGA</span>
+            <span class="hover:text-black dark:hover:text-white transition-colors cursor-default">IXAMBEE</span>
+        </div>
+    </section>
+
+    <section class="min-h-[80vh] flex items-center justify-center px-6 md:px-24 py-24">
+        <div class="max-w-4xl">
+            <h3 class="text-dishaRed font-display font-bold uppercase tracking-widest mb-8">Career Summary</h3>
+            <p class="text-3xl md:text-5xl font-display leading-snug reveal-text" id="about-text">
+                A results-driven Digital Marketing Professional who bridges creativity and technology. Skilled in
+                SEO-focused content, CMS platforms, and AI-powered workflows. With a background in Computer Science and
+                a passion for creative direction, I turn data into compelling visual stories.
+            </p>
+        </div>
+    </section>
+
+    <section id="work-section"
+        class="h-screen w-full overflow-hidden bg-charcoal text-cream relative flex items-center">
+        <div class="absolute top-10 left-10 z-10">
+            <h2 class="text-6xl font-display font-bold text-white">Selected<br><span class="text-dishaRed">Works</span>
+            </h2>
+            <p class="mt-4 text-white/60">Swipe to explore folders</p>
+        </div>
+
+        <div id="work-track" class="flex gap-12 px-12 md:px-32 absolute h-[60vh]">
+
+            <div
+                class="w-[85vw] md:w-[600px] h-full bg-cream text-charcoal p-8 md:p-12 flex flex-col justify-between rounded-xl shrink-0 group hover:scale-[1.02] transition-transform duration-500 cursor-pointer">
+                <div class="flex justify-between items-start">
+                    <span class="text-sm font-bold border border-charcoal/20 px-3 py-1 rounded-full">01 / GROWTH</span>
+                    <i data-lucide="arrow-up-right" class="w-8 h-8 group-hover:text-dishaRed transition-colors"></i>
+                </div>
+                <div>
+                    <h3 class="text-4xl md:text-5xl font-display font-bold mb-4">ixamBee Campaigns</h3>
+                    <p class="text-lg opacity-70 mb-6">Boosted Instagram engagement by 25% and drove 30% follower growth
+                        through data-backed content strategies.</p>
+                    <div class="w-full h-48 bg-gray-200 rounded-lg overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop"
+                            class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
+                            alt="Social Media Analytics">
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="w-[85vw] md:w-[600px] h-full bg-[#1A1A1A] text-white border border-white/10 p-8 md:p-12 flex flex-col justify-between rounded-xl shrink-0 group hover:scale-[1.02] transition-transform duration-500 cursor-pointer">
+                <div class="flex justify-between items-start">
+                    <span class="text-sm font-bold border border-white/20 px-3 py-1 rounded-full text-dishaYellow">02 /
+                        TECH</span>
+                    <i data-lucide="code" class="w-8 h-8 group-hover:text-dishaYellow transition-colors"></i>
+                </div>
+                <div>
+                    <h3 class="text-4xl md:text-5xl font-display font-bold mb-4">Computer Science</h3>
+                    <p class="text-lg opacity-70 mb-6">B.Sc. Honors Thesis & Personal Projects. Exploring the
+                        intersection of raw code and user experience.</p>
+                    <div class="w-full h-48 bg-gray-800 rounded-lg overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop"
+                            class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
+                            alt="Coding">
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="w-[85vw] md:w-[600px] h-full bg-dishaRed text-white p-8 md:p-12 flex flex-col justify-between rounded-xl shrink-0 group hover:scale-[1.02] transition-transform duration-500 cursor-pointer">
+                <div class="flex justify-between items-start">
+                    <span class="text-sm font-bold border border-white/20 px-3 py-1 rounded-full">03 / CREATIVE</span>
+                    <i data-lucide="palette" class="w-8 h-8 group-hover:text-black transition-colors"></i>
+                </div>
+                <div>
+                    <h3 class="text-4xl md:text-5xl font-display font-bold mb-4">Arzoyi & Offiga</h3>
+                    <p class="text-lg opacity-90 mb-6">Visual Identity, Holi Collection creatives, and corporate
+                        merchandise design.</p>
+                    <div class="w-full h-48 bg-black/20 rounded-lg overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799314348d?q=80&w=1000&auto=format&fit=crop"
+                            class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
+                            alt="Design Sketches">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-[10vw] h-full shrink-0"></div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <h3 class="text-4xl font-display font-bold mb-8">The Toolbox</h3>
+                <p class="text-lg opacity-70 leading-relaxed">
+                    A hybrid workflow combining traditional design precision with modern AI efficiency and robust
+                    management platforms.
+                </p>
+            </div>
+            <div class="space-y-8">
+                <div class="group">
+                    <h4
+                        class="text-xl font-bold border-b border-black/10 dark:border-white/10 pb-2 mb-2 flex justify-between">
+                        Design & Editing <i data-lucide="pen-tool"
+                            class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </h4>
+                    <p class="text-greyText group-hover:text-dishaRed transition-colors">Figma, Canva, Adobe InDesign,
+                        Photoshop, Premiere Pro, Final Cut Pro</p>
+                </div>
+                <div class="group">
+                    <h4
+                        class="text-xl font-bold border-b border-black/10 dark:border-white/10 pb-2 mb-2 flex justify-between">
+                        Marketing & Growth <i data-lucide="trending-up"
+                            class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </h4>
+                    <p class="text-greyText group-hover:text-dishaRed transition-colors">Google Ads, Meta Ads, SemRush,
+                        MoEngage, Zoho CRM, SendGrid</p>
+                </div>
+                <div class="group">
+                    <h4
+                        class="text-xl font-bold border-b border-black/10 dark:border-white/10 pb-2 mb-2 flex justify-between">
+                        Management & AI <i data-lucide="cpu"
+                            class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </h4>
+                    <p class="text-greyText group-hover:text-dishaRed transition-colors">Notion, Jira, Confluence,
+                        GPT-4, Claude, Perplexity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-charcoal text-cream py-24 px-6 md:px-24 rounded-t-3xl mt-12">
+        <div class="flex flex-col items-center text-center">
+            <h2
+                class="text-5xl md:text-8xl font-display font-bold mb-12 hover:text-dishaYellow transition-colors duration-500 cursor-pointer">
+                LET'S WORK <br> TOGETHER
+            </h2>
+            <div class="flex flex-col md:flex-row gap-8 items-center text-lg">
+                <a href="mailto:dishakanojia87@gmail.com"
+                    class="border-b border-white/30 hover:border-dishaRed hover:text-dishaRed pb-1 transition-all">dishakanojia87@gmail.com</a>
+                <span class="hidden md:block text-white/30">•</span>
+                <a href="https://linkedin.com/in/disha87" target="_blank"
+                    class="border-b border-white/30 hover:border-dishaRed hover:text-dishaRed pb-1 transition-all">LinkedIn</a>
+                <span class="hidden md:block text-white/30">•</span>
+                <span class="opacity-50">+91 8368985704</span>
+            </div>
+            <p class="mt-24 text-sm opacity-30">© 2026 Disha Kanojia. Crafted with Logic & Love.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+        // 1. Initialize Icons
+        lucide.createIcons();
+
+        // 2. Initialize Lenis (Smooth Scroll)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Sync GSAP with Lenis
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 3. Loader Animation
+        const tl = gsap.timeline();
+        tl.to("#loader h1", { opacity: 1, duration: 1, delay: 0.5 })
+            .to("#loader", { y: "-100%", duration: 1.2, ease: "power4.inOut" })
+            .to(".hero-text-container h1", { y: 0, opacity: 1, duration: 1, ease: "power3.out" }, "-=0.5")
+            .to(".hero-cta", { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out" }, "-=0.5");
+
+        // 4. About Text Scroll Reveal
+        // Split text into words/spans for the effect (Simulated here with generic class)
+        const text = document.getElementById('about-text');
+        const content = text.innerText;
+        text.innerHTML = content.split(' ').map(word => `<span>${word} </span>`).join('');
+
+        const spans = text.querySelectorAll('span');
+        gsap.to(spans, {
+            scrollTrigger: {
+                trigger: "#about-text",
+                start: "top 80%",
+                end: "bottom 50%",
+                scrub: 1, // Smooth scrubbing
+            },
+            opacity: 1,
+            color: (index, target) => document.documentElement.classList.contains('dark') ? '#ffffff' : '#000000',
+            stagger: 0.1,
+            duration: 1
+        });
+
+        // 5. Horizontal Scroll for Work Section
+        let workSection = document.getElementById("work-section");
+        let workTrack = document.getElementById("work-track");
+
+        let scrollTween = gsap.to(workTrack, {
+            x: () => -(workTrack.scrollWidth - window.innerWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: workSection,
+                start: "top top",
+                end: () => "+=" + workTrack.scrollWidth, // Defines how long the scroll lasts
+                pin: true,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                anticipatePin: 1
+            }
+        });
+
+        // 6. Marquee Animation
+        gsap.to(".marquee-content", {
+            xPercent: -50,
+            repeat: -1,
+            duration: 20,
+            ease: "linear"
+        });
+
+        // 7. Dark Mode Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+
+            // Update Icon
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.setAttribute('data-lucide', 'sun');
+            } else {
+                themeIcon.setAttribute('data-lucide', 'moon');
+            }
+            lucide.createIcons();
+
+            // Refresh ScrollTrigger to recalculate colors/sizes
+            ScrollTrigger.refresh();
+        });
+
+    </script>
+</body>
+
+</html>
